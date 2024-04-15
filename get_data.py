@@ -29,7 +29,7 @@ def insert_match_stats(year, competition, table_name, column_names, concludedBoo
     fixture_df = pandas2ri.DataFrame(fixture_data)
 
     # Connect to MSSQL
-    connection_string = 'DRIVER={ODBC Driver 17 for SQL Server};Server=JMSDESKTOPPC\SQLEXPRESS04;Database=afl_project;Trusted_Connection=yes;'
+    connection_string = conn_string
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
     
@@ -152,7 +152,7 @@ def insert_player_stats(year, competition, table_name, column_names):
     fixture_df = pandas2ri.DataFrame(fixture_data)
 
     # Connect to MSSQL
-    connection_string = 'DRIVER={ODBC Driver 17 for SQL Server};Server=JMSDESKTOPPC\SQLEXPRESS04;Database=afl_project;Trusted_Connection=yes;'
+    connection_string = conn_string
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
     
@@ -230,7 +230,7 @@ def insert_player_stats(year, competition, table_name, column_names):
 
 def run_sql_file(file_path):
 
-    connection_string = 'DRIVER={ODBC Driver 17 for SQL Server};Server=JMSDESKTOPPC\SQLEXPRESS04;Database=afl_project;Trusted_Connection=yes;'
+    connection_string = conn_string
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
     

@@ -18,7 +18,7 @@ import numpy as np
 
 def connect_to_mssql(database):
     
-    connection_string = 'DRIVER={ODBC Driver 17 for SQL Server};Server=JMSDESKTOPPC\SQLEXPRESS04;Database=' + database + ';Trusted_Connection=yes;'
+    connection_string = 'connection_string + database + ';Trusted_Connection=yes;'
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
     
